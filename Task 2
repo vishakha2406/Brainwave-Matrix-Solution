@@ -1,0 +1,135 @@
+import java.util.*;
+
+// Patient Registration
+class Patient {
+    private String name;
+    private int age;
+    private String gender;
+    private String patientId;
+
+    public Patient(String name, int age, String gender, String patientId) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+        this.patientId = patientId;
+    }
+
+    public String getDetails() {
+        return "Patient ID: " + patientId + "\nName: " + name + "\nAge: " + age + "\nGender: " + gender;
+    }
+}
+
+// Appointment Scheduling
+class Appointment {
+    private String patientId;
+    private String doctorName;
+    private Date appointmentDate;
+
+    public Appointment(String patientId, String doctorName, Date appointmentDate) {
+        this.patientId = patientId;
+        this.doctorName = doctorName;
+        this.appointmentDate = appointmentDate;
+    }
+
+    public String getAppointmentDetails() {
+        return "Patient ID: " + patientId + "\nDoctor: " + doctorName + "\nAppointment Date: " + appointmentDate;
+    }
+}
+
+// Electronic Health Records (EHR)
+class EHR {
+    private String patientId;
+    private String diagnosis;
+    private String prescription;
+
+    public EHR(String patientId, String diagnosis, String prescription) {
+        this.patientId = patientId;
+        this.diagnosis = diagnosis;
+        this.prescription = prescription;
+    }
+
+    public String getEHRDetails() {
+        return "Patient ID: " + patientId + "\nDiagnosis: " + diagnosis + "\nPrescription: " + prescription;
+    }
+}
+
+// Billing and Invoicing
+class Billing {
+    private String patientId;
+    private double amountDue;
+
+    public Billing(String patientId, double amountDue) {
+        this.patientId = patientId;
+        this.amountDue = amountDue;
+    }
+
+    public String getBillDetails() {
+        return "Patient ID: " + patientId + "\nAmount Due: $" + amountDue;
+    }
+}
+
+// Inventory Management
+class Inventory {
+    private String itemName;
+    private int quantity;
+
+    public Inventory(String itemName, int quantity) {
+        this.itemName = itemName;
+        this.quantity = quantity;
+    }
+
+    public String getItemDetails() {
+        return "Item Name: " + itemName + "\nQuantity: " + quantity;
+    }
+}
+
+// Staff Management
+class Staff {
+    private String name;
+    private String role;
+    private String staffId;
+
+    public Staff(String name, String role, String staffId) {
+        this.name = name;
+        this.role = role;
+        this.staffId = staffId;
+    }
+
+    public String getStaffDetails() {
+        return "Staff ID: " + staffId + "\nName: " + name + "\nRole: " + role;
+    }
+}
+
+// Hospital Management System Main Class
+public class HospitalManagement {
+    static List<Patient> patients = new ArrayList<>();
+    static List<Appointment> appointments = new ArrayList<>();
+    static List<EHR> ehrs = new ArrayList<>();
+    static List<Billing> bills = new ArrayList<>();
+    static List<Inventory> inventoryItems = new ArrayList<>();
+    static List<Staff> staffMembers = new ArrayList<>();
+
+    public static void main(String[] args) {
+        // Sample data
+        Patient p1 = new Patient("John Doe", 30, "Male", "P1001");
+        patients.add(p1);
+        Appointment a1 = new Appointment("P1001", "Dr. Smith", new Date());
+        appointments.add(a1);
+        EHR ehr1 = new EHR("P1001", "Flu", "Rest and Hydration");
+        ehrs.add(ehr1);
+        Billing b1 = new Billing("P1001", 200.0);
+        bills.add(b1);
+        Inventory i1 = new Inventory("Aspirin", 50);
+        inventoryItems.add(i1);
+        Staff s1 = new Staff("Jane", "Nurse", "S1001");
+        staffMembers.add(s1);
+
+        // Display Sample Data
+        System.out.println(p1.getDetails());
+        System.out.println(a1.getAppointmentDetails());
+        System.out.println(ehr1.getEHRDetails());
+        System.out.println(b1.getBillDetails());
+        System.out.println(i1.getItemDetails());
+        System.out.println(s1.getStaffDetails());
+    }
+}
